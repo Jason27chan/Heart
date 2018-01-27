@@ -11,6 +11,9 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.get("./chatroom", (req, res) => {
 	res.get("./chatroom.html")
 })
+app.get("./forum", (req, res) => {
+	res.get("./forum.html")
+})
 
 var server = app.listen(3000, () => {
 	console.log("server is listening on port", server.address().port);

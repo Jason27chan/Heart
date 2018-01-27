@@ -61,6 +61,11 @@
     }
     .main {
       margin-top: 100px;
+      
+    
+    }
+    .message {
+      background-color:pink;
       width: 90%;
       height: 100%;
     padding: 10px;
@@ -68,14 +73,16 @@
     transform-origin: center;
     margin-left: auto;
     margin-right: auto;
-    
-    }
-    .message {
-      background-color:pink;
     }
     .oldMessages {
-      border-width: 5px;
-      border-color: black;
+      border: 5px solid grey;
+      width: 90%;
+      height: 100%;
+    padding: 10px;
+  
+    transform-origin: center;
+    margin-left: auto;
+    margin-right: auto;
     }
     
 
@@ -89,9 +96,9 @@
     <div class = "main oldMessages">
         <br>
     </div>
-    <div class = "main message">
-      <input id = "name" class = "form-control" placeholder = "Name">
-      <br>
+    <br>
+    <div class = "message">
+      
       <textarea id = "message" class = "form-control" placeholder = "Message"></textarea>
       <br>
       <button id = "send" class = "button">Post</button>
