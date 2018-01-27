@@ -59,6 +59,7 @@
     </header>
 
     <section>
+      <div id="messages"></div>
       <div class="container">
           <br>
           <div class="jumbotron">>
@@ -70,7 +71,7 @@
             <br>
             <button id="send" class="btn btn-success">Send</button> 
           </div>
-          <div id="messages"></div>
+          
         </div>
       </div>
     </section>
@@ -86,6 +87,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
 
     <script>
       var socket = io()
@@ -106,7 +108,7 @@
 
       function getMessages() {
         $.get("http://localhost:3000/messages", (data) => {
-          data.forEach(addMessages);
+          data.forEach(addMessage);
         })
       }
 
