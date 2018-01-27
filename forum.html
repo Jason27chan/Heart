@@ -39,24 +39,45 @@
       <a href="#">Contact</a>
     </div>
 
-    <!-- Use any element to open the sidenav -->
-    <span onclick="openNav()">open</span>
-
+    
     
 
     <style>
     
     .forumTop {
       overflow:hidden;
-      background-color:black;
+      background-color:white;
       width:100%;
       position:fixed;
       top:0;
+      padding-bottom: 25px;
     }
-    .topthingy {
+    .display-4 {
       padding-top: 10px;
       padding-left: 10px;
+      margin-top: 10px;
+      margin-left: 10px;
+      position:fixed;
     }
+    .main {
+      margin-top: 100px;
+      width: 90%;
+      height: 100%;
+    padding: 10px;
+  
+    transform-origin: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+    }
+    .message {
+      background-color:pink;
+    }
+    .oldMessages {
+      border-width: 5px;
+      border-color: black;
+    }
+    
 
 }
 
@@ -65,9 +86,15 @@
 
 
     </style>
-
-    <div class = "main">
-    
+    <div class = "main oldMessages">
+        <br>
+    </div>
+    <div class = "main message">
+      <input id = "name" class = "form-control" placeholder = "Name">
+      <br>
+      <textarea id = "message" class = "form-control" placeholder = "Message"></textarea>
+      <br>
+      <button id = "send" class = "button">Post</button>
     </div>
   </body>
 
