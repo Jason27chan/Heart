@@ -126,32 +126,8 @@
   <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-  <script>
-      var socket = io()
-      $(() => {
-        $("#send").click(() => {
-          var message = {name: $("#name").val(), message: $("#message").val() }
-          postMessage(message)  
-        });
-
-        getMessages();
-      });
-
-      socket.on('message', addMessage)
-
-      function addMessage(message) {
-        $("#forummessages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
-      }
-
-      function getMessages() {
-        $.get("http://localhost:3000/forumposts", (data) => {
-          data.forEach(addMessage);
-        })
-      }
-
-      function postMessage(message) {
-        $.post("http://localhost:3000/forumposts", message)
-      }
+  <script src="/js/forum.js">
+      
     </script>
 
 </html>
