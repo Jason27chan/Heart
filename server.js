@@ -5,6 +5,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose')
 var mongoose2 = require('mongoose')
+//Heart
 //password to mLab is Hearts4
 
 app.use(express.static(__dirname));
@@ -20,7 +21,7 @@ var Message = mongoose.model('Message', {
 	message: String
 })
 
-var forumMessage = mongoose2.model('forumMessage', {
+var ForumMessage = mongoose.model('forumMessage', {
 	subject: String,
 	message: String
 })
@@ -39,7 +40,11 @@ app.get('/messages', (req, res) => {
 })
 
 app.get('/forumposts', (req, res) => {
-	res.send(forummessages);
+	ForumMessage.find({}, (err, message) => {
+		res.send(message)
+	})
+	// console.log(forumMessage.find({}))
+	// res.send(forummessages);
 })
 
 app.post('/messages', (req, res) => {
@@ -60,7 +65,7 @@ app.post('/messages', (req, res) => {
 app.post('/forumposts', (req, res) => {
 	//console.log(req.body)
 
-	var forumPost = new forumMessage(req.body)
+	var forumPost = new ForumMessage(req.body)
 	forumPost.save((err) => {
 		if (err) {
 			sendStatus(500)
@@ -79,9 +84,9 @@ mongoose.connect(dbUrl, (err) => {
 	console.log('mongo db connection', err)
 })
 
-mongoose2.connect(dbUrlforum, (err) => {
-	console.log('mongo db connection', err)
-})
+// mongoose.connect(dbUrlforum, (err) => {
+// 	console.log('mongo db connection', err)
+// })
 
 var server = http.listen(3000, () => {
 	console.log("server is listening on port", server.address().port);
