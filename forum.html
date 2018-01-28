@@ -1,6 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    
+    .forumTop {
+      
+      background-color:white;
+      width:100%;
+      position:fixed;
+      top:0;
+      padding-bottom: 25px;
+    }
+    .display-4 {
+      padding-top: 10px;
+      padding-left: 10px;
+      margin-top: 10px;
+      margin-left: 10px;
+      
+    }
+    .description {
+      padding-left: 20px;
+    }
+    .main {
+      margin-top: 250px;
+      
+    
+    }
+    .message {
+      background-color:pink;
+      width: 90%;
+      height: 100%;
+    padding: 10px;
+  
+    transform-origin: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .oldMessages {
+      border: 5px solid grey;
+      width: 90%;
+      height: 500px;
+    padding: 10px;
+  
+    transform-origin: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
 
+}
+    </style>
   <head>
 
     <meta charset="utf-8">
@@ -26,6 +74,7 @@
   </head>
 
   <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">Heart</a>
@@ -50,46 +99,23 @@
         </div>
       </div>
     </nav>
+
     <div class = "forumTop">
-      <h2 class="display-4" class = "topthingy">Forum</h2>
-    </div>
-    <div id="mySidenav" class="sidenav">
-      
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
-    </div>
-
-    <!-- Use any element to open the sidenav -->
-    <span onclick="openNav()">open</span>
-
-    
-
-    <style>
-    
-    .forumTop {
-      overflow:hidden;
-      background-color:black;
-      width:100%;
-      position:fixed;
-      top:0;
-    }
-    .topthingy {
-      padding-top: 10px;
-      padding-left: 10px;
-    }
-
-}
-
-
-
-
-
-    </style>
-
+      <h2 class="display-4"><br>Forum</h2>
+      <p class = "description">Chat in a public forum with others about real world problems and solutions</p>
+    </div>   
+  
     <div class = "main">
-    
+      <div class = "oldMessages">
+          <br>
+      </div>
+      <br>
+      <div class = "message">
+        
+        <textarea id = "message" class = "form-control" placeholder = "Message"></textarea>
+        <br>
+        <button id = "send" class = "button">Post</button>
+      </div>
     </div>
   </body>
 

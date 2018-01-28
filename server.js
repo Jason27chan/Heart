@@ -16,6 +16,9 @@ var messages = [
 app.get("./chatroom", (req, res) => {
 	res.get("./chatroom.html")
 })
+app.get("./forum", (req, res) => {
+	res.get("./forum.html")
+})
 
 app.get('/messages', (req, res) => {
 	res.send(messages);
