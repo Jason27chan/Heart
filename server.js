@@ -3,10 +3,18 @@ var bodyParser = require("body-parser")
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var mongoose = require('mongoose')
+//password to mLab is Hearts4
 
 app.use(express.static(__dirname));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
+
+var dbUrl = 'mongodb://user:user@ds117848.mlab.com:17848/hearts'
+
+var Message = mongoose.model('Message', {
+	message: String
+})
 
 var messages = [
 	{name: 'Tim', message: 'hi'},
@@ -37,6 +45,10 @@ app.post('/messages', (req, res) => {
 
 io.on('connection', (socket) => {
 	console.log("a user has connected")
+})
+
+mongoose.connect(dbUrl, {useMongoClient: true}, (err) => {
+	console.log('mongo db connection', err)
 })
 
 var server = http.listen(3000, () => {
