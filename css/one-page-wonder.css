@@ -180,3 +180,13 @@ header.masthead .bg-circle-4 {
   margin-left: auto;
   margin-right: auto;
 }
+
+#forummessages {
+  background-color: black;
+  padding: 2rem;
+}
+
+.forum-message {
+  background-color: white;
+  padding: 1rem;
+}
