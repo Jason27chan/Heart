@@ -71,7 +71,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/one-page-wonder.min.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
 
   </head>
 
@@ -105,17 +105,26 @@
       </div>
     </nav>
 
-    <div class = "forumTop">
+    <header class="masthead text-center text-white">
+      <div class="masthead-content">
+        <div class="container">
+          <h1 class="masthead-heading mb-0">Forum</h1>
+          <h2>Chat in a public forum with others about</p>
+          <h2>about real world problems and solutions</p>
+        </div>
+      </div>
+    </header>
+
+<!--     <div class = "forumTop">
       <h2 class="display-4"><br>Forum</h2>
       <p class = "description">Chat in a public forum with others about real world problems and solutions</p>
-    </div>   
+    </div>    -->
   
-    <div class = "main">
+    <!-- <div class = "main">
       <div class = "oldMessages">
           <div id = "forummessages">
           </div>
       </div>
-      <br>
       <div class = "message">
         <input id = "name" class = "form-control" placeholder = "Name">
       <br>
@@ -123,8 +132,30 @@
         <br>
         <button id = "send" class = "button">Post</button>
       </div>
-    </div>
+
+    </div> -->
+    <section> 
+      <div class="container">
+        <br>
+        <h1>Forum Posts</h2>
+        <div id="forummessages"></div>
+      </div>
+    </section>
+
+    <br>
     
+    <section>
+      <div class="container">
+        <h4>Make a post</h1>
+        <br>
+        <input id="subject" class="form-control" placeholder="Subject">
+        <br>
+        <textarea id="message" class="form-control" placeholder="Message"></textarea>
+        <br>
+        <button id="send" class="btn btn-success">Send</button>
+      </div>
+    </section>
+
   </body>
   <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
