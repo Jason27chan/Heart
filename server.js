@@ -38,9 +38,18 @@ app.get('/number', (req, res) => {
 
 app.post('/messages', (req, res) => {
 	//console.log(req.body)
-	io.emit('message', req.body)
-	messages.push(req.body)
-	res.sendStatus(200);
+	var message = new Message(req.body)
+
+	message.save((err) => {
+		if (err) 
+			sendStatus(500)
+
+		io.emit('message', req.body)
+		messages.push(req.body)
+		res.sendStatus(200);
+	})
+
+	
 })
 
 io.on('connection', (socket) => {
