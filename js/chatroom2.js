@@ -1,7 +1,12 @@
 var socket = io()
 $(() => {
+  var animals = ["Kookaburra", "Zebra", "Giraffe", "Horse", "Armadillo"]
+
+  var userAnimal = animals[Math.floor(Math.random() * 5)]
+  $("#animal-name").append(userAnimal)
+
   $("#send").click(() => {
-    var message = {name: "Kookaburra", message: $("#message").val() }
+    var message = {name: userAnimal, message: $("#message").val() }
     postMessage(message)  
   });
 
@@ -11,7 +16,11 @@ $(() => {
 socket.on('message', addMessage)
 
 function addMessage(message) {
-  $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+  $("#messages").append(`
+    <p> ${message.name} </p> 
+    <span class="left"> ${message.message} </span>
+    <div class="clear"></div>
+  `)
 }
 
 function getMessages() {
