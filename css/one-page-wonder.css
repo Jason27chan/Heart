@@ -186,3 +186,17 @@ hr {
   margin-right: 10em;
   border-width: 3px;
 }
+
+#forummessages {
+  background-color: black;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top:1rem;
+  padding-bottom:.2rem;
+}
+
+.forum-message {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
