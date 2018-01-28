@@ -70,6 +70,7 @@ app.post('/messages', (req, res) => {
 
 app.post('/forumposts', (req, res) => {
 	//console.log(req.body)
+
 	var forumPost = new forumMessage(req.body)
 	forumPost.save((err) => {
 		if (err) {

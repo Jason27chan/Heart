@@ -53,7 +53,7 @@ header.masthead {
   overflow: hidden;
   padding-top: calc(7rem + 72px);
   padding-bottom: 7rem;
-  background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+  background-color: #2B4C6E;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
@@ -123,7 +123,7 @@ header.masthead .bg-circle-4 {
 }
 
 .bg-primary {
-  background-color: #ee0979 !important;
+  background-color: #2B4C6E !important;
 }
 
 .btn-primary {
@@ -152,4 +152,31 @@ header.masthead .bg-circle-4 {
 
 .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+}
+
+.circle {
+/*    display: table-cell;*/
+
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    background: #2B4C6E;
+    color: white;
+}
+
+#rate {
+    font-size: 25px;
+}
+
+.col-lg-4 {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+}
+
+#impulse {
+  width: 800px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
