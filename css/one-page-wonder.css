@@ -206,3 +206,10 @@ div.forstuff {
   /**background-color: black;*/
   text-align: center;
 }
+
+div.special {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
