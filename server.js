@@ -4,7 +4,6 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose')
-var mongoose2 = require('mongoose')
 //Heart
 //password to mLab is Hearts4
 
@@ -13,8 +12,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 
 var dbUrl = 'mongodb://user:user@ds117848.mlab.com:17848/hearts'
-
-var dbUrlforum = 'mongodb://forumuser:forumuser@ds117858.mlab.com:17858/heartsforum'
 
 var Message = mongoose.model('Message', {
 	name: String,
@@ -36,15 +33,15 @@ var forummessages = [
 ]
 
 app.get('/messages', (req, res) => {
-	res.send(messages);
+	Message.find({}, (err, message) => {
+		res.send(message)
+	})
 })
 
 app.get('/forumposts', (req, res) => {
 	ForumMessage.find({}, (err, message) => {
 		res.send(message)
 	})
-	// console.log(forumMessage.find({}))
-	// res.send(forummessages);
 })
 
 app.post('/messages', (req, res) => {
@@ -83,10 +80,6 @@ io.on('connection', (socket) => {
 mongoose.connect(dbUrl, (err) => {
 	console.log('mongo db connection', err)
 })
-
-// mongoose.connect(dbUrlforum, (err) => {
-// 	console.log('mongo db connection', err)
-// })
 
 var server = http.listen(3000, () => {
 	console.log("server is listening on port", server.address().port);
