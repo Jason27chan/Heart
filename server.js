@@ -31,7 +31,7 @@ var messages = [
 ]
 
 var forummessages = [
-	// {name: 'hi', message: 'meme'}
+	{name: 'hi', message: 'meme'}
 ]
 
 app.get("./chatroom", (req, res) => {
