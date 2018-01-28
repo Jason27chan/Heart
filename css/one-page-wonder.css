@@ -200,3 +200,9 @@ hr {
   padding: 1rem;
   margin-bottom: 1rem;
 }
+
+div.forstuff {
+  height: 20px;
+  /**background-color: black;*/
+  text-align: center;
+}
