@@ -180,3 +180,9 @@ header.masthead .bg-circle-4 {
   margin-left: auto;
   margin-right: auto;
 }
+
+hr {
+  margin-left: 10em;
+  margin-right: 10em;
+  border-width: 3px;
+}
