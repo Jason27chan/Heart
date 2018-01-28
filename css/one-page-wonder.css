@@ -173,3 +173,10 @@ header.masthead .bg-circle-4 {
   padding-right: 10px;
   padding-top: 20px;
 }
+
+#impulse {
+  width: 800px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
