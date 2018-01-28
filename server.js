@@ -21,7 +21,7 @@ var Message = mongoose.model('Message', {
 })
 
 var forumMessage = mongoose2.model('forumMessage', {
-	name: String,
+	subject: String,
 	message: String
 })
 
@@ -31,15 +31,8 @@ var messages = [
 ]
 
 var forummessages = [
-	{name: 'hi', message: 'meme'}
+	{subject: 'Wow what a great website', message: 'I love this page'}
 ]
-
-app.get("./chatroom", (req, res) => {
-	res.get("./chatroom.html")
-})
-app.get("./forum", (req, res) => {
-	res.get("./forum.html")
-})
 
 app.get('/messages', (req, res) => {
 	res.send(messages);
@@ -47,10 +40,6 @@ app.get('/messages', (req, res) => {
 
 app.get('/forumposts', (req, res) => {
 	res.send(forummessages);
-})
-
-app.get('/number', (req, res) => {
-	res.send(number);
 })
 
 app.post('/messages', (req, res) => {

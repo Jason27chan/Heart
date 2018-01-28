@@ -1,7 +1,7 @@
 var socket = io()
 $(() => {
 	$("#send").click(() => {
-	  var message = {name: $("#name").val(), message: $("#message").val() }
+	  var message = {subject: $("#subject").val(), message: $("#message").val() }
 	  postMessage(message)  
 	});
 
@@ -13,7 +13,7 @@ socket.on('message', addMessage)
 function addMessage(message) {
 	$("#forummessages").append(
 		`<div class="forum-message">
-			<h4>${message.name}</h4> 
+			<h4>${message.subject}</h4> 
 			<p>${message.message}</p>
 		</div>`
 	)

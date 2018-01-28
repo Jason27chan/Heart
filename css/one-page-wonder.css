@@ -183,10 +183,14 @@ header.masthead .bg-circle-4 {
 
 #forummessages {
   background-color: black;
-  padding: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top:1rem;
+  padding-bottom:.2rem;
 }
 
 .forum-message {
   background-color: white;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
