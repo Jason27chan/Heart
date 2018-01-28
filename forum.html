@@ -110,16 +110,48 @@
   
     <div class = "main">
       <div class = "oldMessages">
-          <br>
+          <div id = "forummessages">
+          </div>
       </div>
       <br>
       <div class = "message">
-        
+        <input id = "name" class = "form-control" placeholder = "Name">
+      <br>
         <textarea id = "message" class = "form-control" placeholder = "Message"></textarea>
         <br>
         <button id = "send" class = "button">Post</button>
       </div>
     </div>
   </body>
+  <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  <script>
+      var socket = io()
+      $(() => {
+        $("#send").click(() => {
+          var message = {name: $("#name").val(), message: $("#message").val() }
+          postMessage(message)  
+        });
+
+        getMessages();
+      });
+
+      socket.on('message', addMessage)
+
+      function addMessage(message) {
+        $("#forummessages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+      }
+
+      function getMessages() {
+        $.get("http://localhost:3000/forumposts", (data) => {
+          data.forEach(addMessage);
+        })
+      }
+
+      function postMessage(message) {
+        $.post("http://localhost:3000/forumposts", message)
+      }
+    </script>
 
 </html>
