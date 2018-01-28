@@ -154,18 +154,14 @@ header.masthead .bg-circle-4 {
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
 }
 
-.square {
-    display: table-cell;
-    padding: 20px;
-    height: 300px;
-    width: 600px;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 10%;
-    font-size: 20px;
+.circle {
+/*    display: table-cell;*/
+
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
     background: #2B4C6E;
     color: white;
-    align-self: left;
 }
 
 #rate {
