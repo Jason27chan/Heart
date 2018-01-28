@@ -44,7 +44,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="chatroom.html">Chatroom</a>
-            </li> 
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="sources.html">Sources</a>
             </li>
@@ -121,7 +121,86 @@
             <div class="p-5">
               <h2 class="display-4">Mental Health Care</h2>
               <p>Research has shown that a substantial portion of those who commit suicide suffer from mental illness. Fortunately, there are resources available for those living with mental illness.</p>
-              <p></p>
+              <!-- start dropdown -->
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Search by Mental Health Condition
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <button class="dropdown-item" type="button" data-toggle="collapse" data-target="#alcoholdrugs" aria-expanded="false" aria-controls="alcoholdrugs">Alcohol & Drugs</button>
+                  <button class="dropdown-item" type="button" data-toggle="collapse" data-target="#anxiety" aria-expanded="false" aria-controls="anxiety">Anxiety Disorders</button>
+                  <button class="dropdown-item" type="button" data-toggle="collapse" data-target="#bipolar" aria-expanded="false" aria-controls="bipolar">Bipolar Disorder</button>
+                  <button class="dropdown-item" type="button" data-toggle="collapse" data-target="#depression" aria-expanded="false" aria-controls="depression">Depression</button>
+                  <button class="dropdown-item" type="button" data-toggle="collapse" data-target="#eating" aria-expanded="false" aria-controls="eating">Eating Disorders</button>
+                  <button class="dropdown-item" type="button" data-toggle="collapse" data-target="#schizophrenia" aria-expanded="false" aria-controls="schizophrenia">Schizophrenia</button>
+                  <button class="dropdown-item" type="button" data-toggle="collapse" data-target="#general" aria-expanded="false" aria-controls="schizophrenia">General/Other</button>
+                </div>
+              </div>
+              <!-- end dropdown -->
+              <br>
+              <!-- start collapse -->
+              <div id = "accordion">
+                <div class="collapse" id="alcoholdrugs" data-parent="#accordion">
+                  <div class="card card-body">
+                      <a href="http://www.samhsa.gov/" target="_blank">Substance Abuse and Mental Health Services Administration</a>
+                      <br>
+                      <a href="http://www.drugabuse.gov/" target="_blank">National Institute on Drug Abuse</a>
+                  </div>
+                </div>
+
+                <div class="collapse" id="anxiety" data-parent="#accordion">
+                  <div class="card card-body">
+                      <a href="http://www.adaa.org/" target="_blank">Anxiety Disorders Association of America</a>
+                      <br>
+                      <a href="http://www.anxietybc.com/" target="_blank">AnxietyBC</a>
+                  </div>
+                </div>
+
+                <div class="collapse" id="bipolar">
+                  <div class="card card-body" data-parent="#accordion">
+                      <a href="http://www.dbsalliance.org/site/PageServer?pagename=home&cvridirect=true" target="_blank">Depression and Bipolar Support Alliance</a>
+                      <br>
+                      <a href="http://ibpf.org/" target="_blank">International Bipolar Foundation</a>
+                  </div>
+                </div>
+
+                <div class="collapse" id="depression">
+                  <div class="card card-body" data-parent="#accordion">
+                      <a href="http://www.dbsalliance.org/site/PageServer?pagename=home&cvridirect=true" target="_blank">Depression and Bipolar Support Alliance</a>
+                      <br>
+                      <a href="http://www.familyaware.org/" target="_blank">Families for Depression Awareness</a>
+                  </div>
+                </div>
+
+                <div class="collapse" id="eating">
+                  <div class="card card-body" data-parent="#accordion">
+                      <a href="http://www.eatingforlife.org/" target="_blank">Eating for Life Alliance</a>
+                      <br>
+                      <a href="http://www.anad.org/" target="_blank">National Association of Anorexia Nervosa and Associated Disorders</a>
+                      <br>
+                      <a href="http://www.nationaleatingdisorders.org/" target="_blank">National Eating Disorders Association</a>
+                  </div>
+                </div>
+
+                <div class="collapse" id="schizophrenia">
+                  <div class="card card-body" data-parent="#accordion">
+                      <a href="http://sardaa.org/" target="_blank">Schizophrenia and Related Disorders Alliance of America</a>
+                      <br>
+                      <a href="http://www.schizophrenia.com/" target="_blank">Schizophrenia.com</a>
+                  </div>
+                </div>
+
+                <div class="collapse" id="general">
+                  <div class="card card-body" data-parent="#accordion">
+                      <a href="http://www.rtor.org/" target="_blank">Resources to Recover</a>
+                      <br>
+                      <a href="http://www.nami.org/" target="_blank">National Alliance on Mental Illness</a>
+                      <br>
+                      <a href="http://www.mentalhealth.gov/" target="_blank">National Dialogue on Mental Health</a>
+                  </div>
+                </div>
+            </div>
+            <!-- end collapse -->
             </div>
           </div>
         </div>
