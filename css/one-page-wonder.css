@@ -205,10 +205,11 @@ hr {
 
 div.forstuff {
   height: 20px;
-  /**background-color: black;*/
+  background-color: black;
   text-align: center;
 }
 
+<<<<<<< HEAD
 
 /**
 
@@ -301,4 +302,12 @@ span.right
 .clear
 {
     clear: both;
+}
+
+
+div.special {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
