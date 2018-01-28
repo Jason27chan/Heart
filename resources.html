@@ -19,7 +19,19 @@
 
     <!-- Custom styles for this template -->
     <link href="css/one-page-wonder.min.css" rel="stylesheet">
-
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
 
   <body>
@@ -206,6 +218,71 @@
         </div>
       </div>
     </section>
+
+       
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <h3>Nearby Therapists</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="map" class="container"></div>
+    <script>
+      var therapistLocs = [{lat:33.763455, lng: -84.369158}, {lat: 33.760315, lng: -84.369373}, {lat: 33.776214, lng: -84.382179}]
+
+      var therapistNames = ["The Inner Circle Counceling Center", "Dr. Rebecca M. Johnson, Psy. D.", "Joshua M. Noblitt, LMFT"]
+
+      function initMap() {
+      var center = {lat: 33.765849, lng: -84.388378};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: center
+      });
+      var marker = new google.maps.Marker({
+        position: {lat: 33.775315, lng:  -84.395764},
+        label: {
+          text: "Georgia Tech",
+          fontWeight: "bold"
+        },
+        map: map
+      });
+
+      var customStyle = [
+        {
+          featureType: "all",
+          elementType: "labels",
+          stylers: [
+            { visibility: "off" }
+          ]
+        }
+      ]
+
+      map.set('styles', customStyle)
+
+      for (var i = 0; i < therapistLocs.length; i++) {
+          var newMarker = new google.maps.Marker({
+            position: therapistLocs[i],
+            label: {
+              fontSize:"76",
+              text: therapistNames[i],
+              fontWeight:"bold"
+            },
+            map: map
+          })
+      }
+      
+      
+        
+      
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpgmXhKrlDpvSTO_MM_ZJRkLDzadL0bqQ&callback=initMap"
+    async defer></script>
+    
 
     <!-- Footer -->
     <footer class="py-5 bg-black">
