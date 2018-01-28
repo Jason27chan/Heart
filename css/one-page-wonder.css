@@ -34,11 +34,6 @@ h6 {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.images {
-  max-width: 800px;
-  max-height: 800px;
-}
-
 .navbar-custom .navbar-brand {
   text-transform: uppercase;
   font-size: 1rem;
@@ -58,11 +53,11 @@ header.masthead {
   overflow: hidden;
   padding-top: calc(7rem + 72px);
   padding-bottom: 7rem;
-  /*background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%); */
+  background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
-  background-size: cover; /* scals the image to the screen */
+  background-size: cover;
 }
 
 header.masthead .masthead-content {
@@ -83,7 +78,7 @@ header.masthead .bg-circle {
    /*#21618C*/
   position: absolute;
   border-radius: 100%;
-  /*background: linear-gradient(0deg, #ee0979 0%, #ff6a00 100%);*/
+  background: linear-gradient(0deg, #ee0979 0%, #ff6a00 100%);
 }
 
 header.masthead .bg-circle-1 {
@@ -128,7 +123,7 @@ header.masthead .bg-circle-4 {
 }
 
 .bg-primary {
-  background-color: #2B4C6E !important;
+  background-color: #ee0979 !important;
 }
 
 .btn-primary {
@@ -157,4 +152,28 @@ header.masthead .bg-circle-4 {
 
 .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+}
+
+.square {
+    display: table-cell;
+    padding: 20px;
+    height: 300px;
+    width: 600px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10%;
+    font-size: 20px;
+    background: #2B4C6E;
+    color: white;
+    align-self: left;
+}
+
+#rate {
+    font-size: 30px;
+}
+
+.col-lg-4 {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
 }
