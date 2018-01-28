@@ -5,7 +5,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose')
 var mongoose2 = require('mongoose')
-//password to mLab is Hearts4
+//user is Heart, password to mLab is Hearts4
 
 app.use(express.static(__dirname));
 app.use(bodyParser.json())
@@ -19,6 +19,14 @@ var Message = mongoose.model('Message', {
 	name: String,
 	message: String
 })
+var Message2 = mongoose.model('Message2', {
+	name: String,
+	message: String
+})
+var Message3 = mongoose.model('Message3', {
+	name: String,
+	message: String
+})
 
 var forumMessage = mongoose2.model('forumMessage', {
 	subject: String,
@@ -29,6 +37,13 @@ var messages = [
 	{name: 'Tim', message: 'hi'},
 	{name: 'Jans', message: 'hello'}
 ]
+var messages1 = [
+	{name: 'Bob', message: 'i like helicopters'}
+]
+
+var messages2 = [
+	{name: 'json', message: 'i main bastion'}
+]
 
 var forummessages = [
 	{subject: 'Wow what a great website', message: 'I love this page'}
@@ -36,6 +51,14 @@ var forummessages = [
 
 app.get('/messages', (req, res) => {
 	res.send(messages);
+})
+
+app.get('/messages1', (req, res) => {
+	res.send(messages1);
+})
+
+app.get('/messages2', (req, res) => {
+	res.send(messages2);
 })
 
 app.get('/forumposts', (req, res) => {
@@ -49,6 +72,36 @@ app.post('/messages', (req, res) => {
 			sendStatus(500)
 		}
 		messages.push(req.body)
+		io.emit('message', req.body)
+	
+		res.sendStatus(200);
+	})
+	//console.log(req.body)
+	
+})
+
+app.post('/messages1', (req, res) => {
+	var message = new Message2(req.body)
+	message.save((err) => {
+		if (err) {
+			sendStatus(500)
+		}
+		messages1.push(req.body)
+		io.emit('message', req.body)
+	
+		res.sendStatus(200);
+	})
+	//console.log(req.body)
+	
+})
+
+app.post('/messages2', (req, res) => {
+	var message = new Message3(req.body)
+	message.save((err) => {
+		if (err) {
+			sendStatus(500)
+		}
+		messages2.push(req.body)
 		io.emit('message', req.body)
 	
 		res.sendStatus(200);
